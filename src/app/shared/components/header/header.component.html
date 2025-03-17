@@ -9,6 +9,8 @@
   </div>
   <nav [class]="isMenuOpen ? ' open' : ''">
     <a (click)="goToPage(['post', 'create'])" routerLink="">Criar post</a>
-    <a (click)="goToPage(['access'])" routerLink="access">Sair</a>
+    <a (click)="goToPage(['access'])" routerLink="access">{{
+      currentUser ? "Sair" : "Entrar"
+    }}</a>
   </nav>
 </header>
