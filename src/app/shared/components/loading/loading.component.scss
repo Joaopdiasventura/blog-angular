@@ -1,34 +1,36 @@
-@use "../../../../styles/colors.scss" as colors;
-
-.loading-spinner {
+.spinner-container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
 
-  .spinner {
-    width: 4vw;
-    height: 4vw;
-    border-radius: 50%;
+  .spinn-root {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-clip: content-box;
-    animation: spin 1s linear infinite;
-    box-shadow: 0 0 0.3vw colors.$primary-color;
-    background: conic-gradient(colors.$background-color, colors.$primary-color);
+    animation: circular-rotate 1.4s ease-in-out infinite;
 
-    .mid {
-      width: 2vw;
-      height: 2vw;
-      border-radius: 50%;
-      box-shadow: 0 0 0.3vw colors.$primary-color;
-      background-color: colors.$background-color;
+    .spinn-svg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10vh;
+      height: 10vh;
+
+      .spinn-circle {
+        transition: stroke-dashoffset 0.35s;
+        transform-origin: center;
+        stroke-dasharray: 80px, 200px;
+        stroke-dashoffset: 0;
+        animation: circular-dash 1.4s ease-in-out infinite;
+      }
     }
   }
 }
 
-@keyframes spin {
+@keyframes circular-rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -37,18 +39,24 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .loading-spinner {
-    .spinner {
-      width: 4vh;
-      height: 4vh;
-      box-shadow: 0 0 0.3vh colors.$primary-color;
+@keyframes circular-dash {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: -133px;
+  }
+}
 
-      .mid {
-        width: 2vh;
-        height: 2vh;
-        box-shadow: 0 0 0.3vh colors.$primary-color;
-      }
-    }
+@media (min-width: 768px) {
+  .spinn-svg {
+    width: 5vw;
+    height: 5vw;
   }
 }
