@@ -1,0 +1,12 @@
+<div class="card" [id]="post.id">
+  <div class="info">
+    <h2>{{ post.title }}</h2>
+    <div class="user-info">
+      <p>{{ post.user.name }}</p>
+      <small>{{ post.user.email }}</small>
+    </div>
+  </div>
+  <div (click)="goToPost()">
+    <button>↩</button>
+  </div>
+</div>

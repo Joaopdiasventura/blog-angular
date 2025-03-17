@@ -1,0 +1,10 @@
+@if (currentPost) {
+<app-header />
+<main>
+  <h1>{{ currentPost.title }}</h1>
+  <p>{{ currentPost.content }}</p>
+  <small>{{ currentPost.user.name }} - {{ currentPost.user.email }}</small>
+  <small>{{ formatDate(currentPost.createdAt) }}</small>
+  <app-button content="Voltar" [onClick]="goBack.bind(this)" />
+</main>
+}

@@ -1,0 +1,28 @@
+@if(isLoading){<loading />} @else if(modalConfig.isVisible) {
+<modal
+  [isVisible]="modalConfig.isVisible"
+  [title]="modalConfig.title"
+  [children]="modalConfig.children"
+  [onClose]="modalConfig.onClose"
+/>} @else {
+<app-header />
+<main>
+  <h1>Criar Post</h1>
+  <form>
+    <app-input
+      type="text"
+      id="title"
+      name="title"
+      label="Titulo"
+      [(ngModel)]="createPostDto.title"
+    />
+    <app-text-area
+      id="content"
+      name="content"
+      label="Conteudo"
+      [(ngModel)]="createPostDto.content"
+    />
+    <app-button content="Criar" [onClick]="createPost.bind(this)" />
+  </form>
+</main>
+}

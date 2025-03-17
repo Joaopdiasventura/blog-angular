@@ -1,0 +1,10 @@
+<div class="text-area-box">
+  <textarea
+    #textarea
+    [id]="id"
+    [name]="name"
+    [(ngModel)]="value"
+    [required]="required"
+  ></textarea>
+  <label [for]="id">{{ label }}</label>
+</div>

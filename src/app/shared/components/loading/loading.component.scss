@@ -1,0 +1,54 @@
+@use "../../../../styles/colors.scss" as colors;
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .spinner {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-clip: content-box;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 0.3vw colors.$primary-color;
+    background: conic-gradient(colors.$background-color, colors.$primary-color);
+
+    .mid {
+      width: 2vw;
+      height: 2vw;
+      border-radius: 50%;
+      box-shadow: 0 0 0.3vw colors.$primary-color;
+      background-color: colors.$background-color;
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .loading-spinner {
+    .spinner {
+      width: 4vh;
+      height: 4vh;
+      box-shadow: 0 0 0.3vh colors.$primary-color;
+
+      .mid {
+        width: 2vh;
+        height: 2vh;
+        box-shadow: 0 0 0.3vh colors.$primary-color;
+      }
+    }
+  }
+}

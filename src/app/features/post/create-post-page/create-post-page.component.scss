@@ -1,0 +1,33 @@
+main {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vh;
+
+  form {
+    padding: 2vw;
+    gap: 2vw;
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 0.3vw #fff;
+    border-radius: 0.3vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    form {
+      padding: 4vh;
+      gap: 4vh;
+      width: 70%;
+      box-shadow: 0 0 0.3vh #fff;
+      border-radius: 0.3vh;
+    }
+  }
+}

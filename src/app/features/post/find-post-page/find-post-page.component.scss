@@ -1,0 +1,34 @@
+@use "../../../../styles/colors.scss" as colors;
+
+main {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+
+  h1 {
+    text-transform: uppercase;
+    color: colors.$primary-color;
+  }
+
+  p {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: start;
+    box-shadow: 0 0 0.3vw #fff;
+    border-radius: 0.3vw;
+    padding: 1vw;
+  }
+
+  small {
+    text-transform: uppercase;
+    color: colors.$second-color;
+  }
+}

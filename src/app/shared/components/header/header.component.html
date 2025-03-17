@@ -1,0 +1,14 @@
+<header>
+  <div (click)="goToPage([''])" class="icon">
+    <img src="icon.png" />
+  </div>
+  <div class="togle-menu" (click)="isMenuOpen = !isMenuOpen">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav [class]="isMenuOpen ? ' open' : ''">
+    <a (click)="goToPage(['post', 'create'])" routerLink="">Criar post</a>
+    <a (click)="goToPage(['access'])" routerLink="access">Sair</a>
+  </nav>
+</header>

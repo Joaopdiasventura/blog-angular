@@ -1,0 +1,52 @@
+@use "../../../../styles/colors.scss" as colors;
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    padding: 0.75vw;
+    position: relative;
+    background: transparent;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1vw;
+    color: colors.$text-color;
+    font-weight: 600;
+    border: 0.01vw solid colors.$primary-color;
+    overflow: hidden;
+    z-index: 1;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 300%;
+      width: 100%;
+      background: linear-gradient(
+        colors.$second-color,
+        colors.$primary-color,
+        colors.$second-color,
+        colors.$primary-color
+      );
+      top: -100%;
+      left: 0;
+      z-index: -1;
+      transition: 0.5s;
+    }
+
+    &:hover:before {
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .btn-box {
+    .btn {
+      padding: 1vh;
+      border-radius: 1vh;
+      font-size: 2vh;
+      z-index: 0;
+    }
+  }
+}

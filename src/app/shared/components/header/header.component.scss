@@ -1,0 +1,126 @@
+@use "../../../../styles/colors.scss" as colors;
+
+header {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1vw;
+  box-shadow: 0 0 0.3vw #000;
+  z-index: 1;
+
+  .icon {
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  nav {
+    a {
+      border-radius: 0.5vw;
+      padding: 0.5vw;
+      cursor: pointer;
+      background-color: colors.$background-secondary-color;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    .togle-menu {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 2vw;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    padding: 0 1vh;
+    .icon {
+      width: 5vh;
+      height: 5vh;
+    }
+  }
+
+  .togle-menu {
+    display: flex;
+    flex-direction: column;
+    width: 3vh;
+    height: 3vh;
+    gap: 0.5vh;
+    cursor: pointer;
+
+    div {
+      width: 100%;
+      background-color: #fff;
+      height: calc(7vh / 3);
+    }
+  }
+
+  nav {
+    overflow: hidden;
+    padding: 1vh;
+    width: 45vw;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 2vw;
+    top: 12.5vh;
+    right: -50vw;
+    background-color: colors.$background-secondary-color;
+    border-radius: 0.5vh;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 0.3vh #fff;
+    z-index: 1;
+    animation: slideOut 0.5s ease-out forwards;
+
+    &.open {
+      animation: slideIn 0.5s ease-out forwards;
+      display: flex;
+      right: 5vw;
+    }
+
+    a {
+      border-radius: 0.5vw;
+      padding: 0.5vw;
+      cursor: pointer;
+      background-color: colors.$background-secondary-color;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    display: none;
+    right: -50vw;
+  }
+  1% {
+    display: flex;
+  }
+  100% {
+    display: flex;
+    right: 5vw;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    display: flex;
+    right: 5vw;
+  }
+  100% {
+    display: none;
+    right: -50vw;
+  }
+}

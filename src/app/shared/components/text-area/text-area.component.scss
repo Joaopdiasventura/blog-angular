@@ -1,0 +1,68 @@
+@use "../../../../styles/colors.scss" as colors;
+
+.text-area-box {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: colors.$text-color;
+    border: 0.01vw solid colors.$text-color;
+    font-size: 1vw;
+    padding: 0.5vw;
+    transition: 0.5s;
+    resize: none;
+
+    &:-webkit-autofill {
+      background: transparent !important;
+      box-shadow: 0 0 0px 1000px colors.$background-color inset !important;
+      color: colors.$text-color !important;
+      transition: 0.5s;
+    }
+
+    &:focus ~ label,
+    &:valid ~ label {
+      top: 0.04vh;
+      left: 0;
+      color: colors.$second-color;
+    }
+
+    &:focus,
+    &:valid {
+      top: 0.04vh;
+      border: 0.01vw solid colors.$second-color;
+    }
+
+    &:hover::-webkit-inner-spin-button,
+    &:focus::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 12%;
+    left: 4%;
+    transform: translateY(-100%);
+    font-size: 1vw;
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-area-box {
+    textarea {
+      font-size: 2vh;
+    }
+
+    label {
+      top: 16%;
+      font-size: 2vh;
+    }
+  }
+}

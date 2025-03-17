@@ -1,0 +1,12 @@
+@if (isLoading) {<loading />} @else {
+<app-header />
+<main>
+  <h1>BEM VINDO @if (currentUser){{{ currentUser.name }}}</h1>
+  <div class="posts-container">
+    @for (post of posts; track $index) {
+    <post-card [post]="post" />
+    }
+    <app-button content=" + " [onClick]="loadPosts.bind(this)" />
+  </div>
+</main>
+}

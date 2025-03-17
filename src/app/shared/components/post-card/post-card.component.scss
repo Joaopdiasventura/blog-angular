@@ -1,0 +1,71 @@
+@use "../../../../styles/colors.scss" as colors;
+
+.card {
+  display: flex;
+  width: 90%;
+  border-radius: 0.5vw;
+  box-shadow: 0 0 0.3vw #fff;
+  height: 15vh;
+  padding: 2vw;
+  align-items: center;
+
+  .info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75vh;
+
+    .user-info {
+      display: flex;
+      height: auto;
+      align-items: center;
+      gap: 1vw;
+
+      p {
+        color: colors.$second-color;
+      }
+
+      small {
+        color: colors.$primary-color;
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1vw;
+    height: 1vw;
+
+    border: 0.1vw solid colors.$second-color;
+    background-color: transparent;
+    color: colors.$text-color;
+    padding: 0.75vw;
+    border-radius: 0.3vw;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    padding: 2vh;
+    border-radius: 0.5vh;
+    box-shadow: 0 0 0.3vh #fff;
+
+    .info {
+      .user-info {
+        gap: 1vh;
+      }
+    }
+
+    button {
+      width: 4vh;
+      height: 4vh;
+      border: 0.1vh solid colors.$second-color;
+      padding: 0.75vh;
+      border-radius: 0.5vh;
+    }
+  }
+}
