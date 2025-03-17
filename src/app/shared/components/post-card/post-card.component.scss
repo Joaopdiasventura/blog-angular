@@ -8,6 +8,7 @@
   height: 15vh;
   padding: 2vw;
   align-items: center;
+  justify-content: space-between;
 
   .info {
     width: 100%;
@@ -15,6 +16,13 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.75vh;
+
+    h2 {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     .user-info {
       display: flex;
