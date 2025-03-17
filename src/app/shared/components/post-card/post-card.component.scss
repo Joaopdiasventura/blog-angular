@@ -11,7 +11,7 @@
   justify-content: space-between;
 
   .info {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,6 +29,9 @@
       height: auto;
       align-items: center;
       gap: 1vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       p {
         color: colors.$second-color;
