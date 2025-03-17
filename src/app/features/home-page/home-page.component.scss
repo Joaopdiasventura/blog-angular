@@ -16,8 +16,11 @@ main {
     overflow-y: auto;
     padding: 1vw;
     gap: 3vh;
+    align-items: center;
 
-    .post-card {
+    post-card {
+      display: flex;
+      justify-content: center;
       width: 100%;
     }
 
@@ -42,9 +45,6 @@ main {
 @media (max-width: 1024px) {
   main {
     .posts-container {
-      width: 100%;
-      padding-right: 0;
-
       button {
         width: 4vh;
         height: 4vh;
